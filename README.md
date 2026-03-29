@@ -1,7 +1,8 @@
 # CALAi-Astro-AI-supported-
 This project aims to produce solutions and plans for natural disasters in the world and especially in Turkey.
 
-Problem Tanımı
+Problem Tanımı:
+
 Türkiye dünyanın en aktif deprem kuşaklarından birinde yer almaktadır. 1999 Marmara, 2023 Kahramanmaraş gibi felaketlerde koordinasyon eksikliği, geç müdahale ve yanlış kaynak yönetimi binlerce hayata mal olmuştur. Afet anında karar vericiler hem gerçek zamanlı veriye hem de tarihsel örüntülere ihtiyaç duymaktadır.
 
 Çözüm
