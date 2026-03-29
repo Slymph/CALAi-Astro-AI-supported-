@@ -1,0 +1,208 @@
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --bg: #f8fafc;
+    --text: #000000;
+    --card: #ffffff;
+    --border: #e2e8f0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, var(--primary) 0%, #0ea5e9 100%);
+    padding: 30px 20px;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+header h1 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 2.2em;
+}
+
+header p {
+    color: #e0f2fe;
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.box {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+    margin-bottom: 25px;
+    border: 1px solid var(--border);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.box:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+h3 {
+    margin-top: 0;
+    color: #1e293b;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+input[type="password"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.2s;
+}
+
+input[type="password"]:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgb(37 99 235 / 0.2);
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgb(37 99 235 / 0.3);
+}
+
+button:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#map {
+    height: 350px;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 2px solid var(--border);
+    z-index: 1;
+    /* Keep map behind modals if any */
+}
+
+#loading {
+    text-align: center;
+    color: var(--primary);
+    font-weight: 500;
+    padding: 30px;
+    background: #eff6ff;
+    border-radius: 8px;
+    border: 1px dashed var(--primary);
+}
+
+#aiResult {
+    background-color: #f8fafc;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary);
+    line-height: 1.7;
+}
+
+#aiResult h2 {
+    color: var(--primary);
+    margin-top: 0;
+}
+
+#aiResult h3 {
+    color: #334155;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 5px;
+    margin-top: 25px;
+}
+
+#aiResult ul,
+#aiResult ol {
+    padding-left: 20px;
+}
+
+#aiResult li {
+    margin-bottom: 8px;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* YENİ EKLENEN: Görseller için Yakınlaştırma (Hover Zoom) Efekti */
+.zoomable-img {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: zoom-in;
+    position: relative;
+    z-index: 10;
+}
+
+.zoomable-img:hover {
+    transform: scale(2.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
+    z-index: 999;
+}
+
+/* YENİ EKLENEN: Bütün normal (body) metin parçalarını kesin olarak SİYAH yap */
+#aiResult p,
+#aiResult li,
+#aiResult span,
+#aiResult strong,
+.box p {
+    color: #000000 !important;
+}
+
+#aiResult h1,
+#aiResult h2,
+#aiResult h3,
+#aiResult h4 {
+    /* Başlıkların kendi renkleri kalsın (koyu kırmızı vs) */
+    font-weight: 700;
+}

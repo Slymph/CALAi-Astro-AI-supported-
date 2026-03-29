@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uydu & AI Afet Yardım Prototipi</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Harita görünümü için Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <header>
+                <h1>🌍 Afet Yönetim Otonom Sistemi</h1>
+                <p>NASA EONET Uydu Verilerini ve Gemini Yapay Zekasını Kullanarak Otomatik Hackathon Prototipi</p>
+            </header>
+
+            <!-- YENİ EKLENEN: Mod Seçimi Sekmeleri -->
+            <div class="tabs" style="display:flex; gap:10px; margin-bottom:25px;">
+                <button id="tabPreBtn" class="tab active"
+                    style="flex:1; padding:15px; font-size:16px; font-weight:bold; background-color:var(--primary); color:white; border:none; border-radius:8px; cursor:pointer; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); transition: 0.2s;">
+                    🛡️ Mod 1: Afet Öncesi (Risk & Hazırlık)
+                </button>
+                <button id="tabDuringBtn" class="tab"
+                    style="flex:1; padding:15px; font-size:16px; font-weight:bold; background-color:#e2e8f0; color:#475569; border:none; border-radius:8px; cursor:pointer; transition: 0.2s;">
+                    🚨 Mod 2: Afet Zamanı (Acil Müdahale)
+                </button>
+            </div>
+
+            <div class="api-setup box">
+                <h3>1. Yapay Zeka Kurulumu (Ücretsiz)</h3>
+                <p>Gerçek zamanlı afet verilerini analiz etmek için ücretsiz <strong>Gemini 1.5 Flash</strong> API
+                    anahtarınızı girin (<a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI
+                        Studio'dan ücretsiz alabilirsiniz</a>):</p>
+                <input type="password" id="apiKey" placeholder="AIzaSy...">
+            </div>
+
+            <div class="data-fetch box">
+                <h3 id="dataTitle">2. Hedef Bölge Seçimi (Risk Analizi)</h3>
+                <p id="dataDesc">NASA EONET üzerinden riskli koordinatları çekiyor ve ızgara üzerinde analiz ediyoruz.
+                </p>
+                <button id="fetchEventsBtn">🛡️ Geçmiş Afet Verilerini Yükle</button>
+
+                <div id="eventsContainer" class="hidden" style="margin-top: 15px;">
+                    <label for="eventSelect"><strong>Bir Afet Seçin:</strong></label>
+                    <select id="eventSelect"></select>
+                </div>
+            </div>
+
+            <div class="map-area box hidden" id="mapBox">
+                <h3 id="mapTitle">3. Olay Konumu & Uydu Analizi</h3>
+                <p id="mapDesc">Seçilen bölgenin konumu haritada işaretlenir ve analize hazır hale getirilir.</p>
+                <div id="map"></div>
+                <button id="analyzeBtn" class="hidden">🤖 AI ile Yardım Planı Oluştur</button>
+            </div>
+
+            <div class="result-area box hidden" id="resultBox">
+                <h3>4. AI Afet Yardım Planı (Çıktı)</h3>
+                <div id="loading" class="hidden">
+                    <span style="font-size: 24px;">⏳</span><br>
+                    Yapay zeka uydu verilerini yorumlayıp yardım planı oluşturuyor...
+                </div>
+                <div id="aiResult"></div>
+            </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Marked.js Markdown Ayrıştırıcı (Gemini sonuçlarını güzelleştirmek için) -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Prototip mantığı -->
+    <script src="script02.js"></script>
+</body>
+
+</html>
