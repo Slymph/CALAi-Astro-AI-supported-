@@ -1,4 +1,4 @@
-# CALAi-Astro-AI-supported-
+# CALAi-Astro: Automated Satellite Imagery Analysis for Strategic Disaster Risk Reduction
 This project aims to produce solutions and plans for natural disasters in the world and especially in Turkey.
 
 Problem Tanımı:
